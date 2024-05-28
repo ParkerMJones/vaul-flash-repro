@@ -1,36 +1,19 @@
-# Welcome to Remix + Vite!
+## Reproduction for issue in [vaul](https://github.com/emilkowalski/vaul)
 
-📖 See the [Remix docs](https://remix.run/docs) and the [Remix Vite docs](https://remix.run/docs/en/main/guides/vite) for details on supported features.
+#### Description of the issue
+- iOS only: Elements that exist below the height of the screen, and that overflow off the page horizontally, will flash when the drawer is closed
+- Tested on Safari, Chrome, and Firefox with same results in each
+- On Android (Galaxy S22, Android 14) and web (Mac M2 OS 14.4.1), the elements behave as expected with no flash (although sometimes scroll position of the page is recalculated on drawer opening, which is undesired)
 
-## Development
+[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/ParkerMJones/vaul-flash-repro)
 
-Run the Vite dev server:
 
-```shellscript
-npm run dev
-```
+#### Environment
+  - Remix 2.9.2
+  - vaul 0.9.1
+  - tested on: iPad (9th Gen) OS 17.4.1
 
-## Deployment
+#### Video Recording
 
-First, build your app for production:
+https://github.com/ParkerMJones/vaul-flash-repro/assets/80937296/dab773e5-94c8-48ea-974e-a7623a07b17d
 
-```sh
-npm run build
-```
-
-Then run the app in production mode:
-
-```sh
-npm start
-```
-
-Now you'll need to pick a host to deploy it to.
-
-### DIY
-
-If you're familiar with deploying Node applications, the built-in Remix app server is production-ready.
-
-Make sure to deploy the output of `npm run build`
-
-- `build/server`
-- `build/client`
