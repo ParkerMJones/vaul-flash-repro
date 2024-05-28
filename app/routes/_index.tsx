@@ -1,12 +1,14 @@
-"use client";
 import type { MetaFunction } from "@remix-run/node";
 import { useState } from "react";
 import { Drawer } from "vaul";
 
 export const meta: MetaFunction = () => {
   return [
-    { title: "New Remix App" },
-    { name: "description", content: "Welcome to Remix!" },
+    { title: "Vaul Issue Reproduction" },
+    {
+      name: "description",
+      content: "Test environment for flashing issue in Vaul on iOS!",
+    },
   ];
 };
 
@@ -15,7 +17,7 @@ export default function Index() {
   const [open, setOpen] = useState(false);
 
   return (
-    <>
+    <div>
       <div className="flex flex-col gap-y-6 p-6 pr-0">
         <h2 className="font-bold text-2xl">Click a tile to open the drawer</h2>
         <p className="font-bold text-xl">
@@ -49,7 +51,7 @@ export default function Index() {
             (sometimes the layout gets repositioned w/ a flash)
           </p>
         </div>
-        <div className="whitespace-nowrap overflow-x-scroll">
+        <div className="whitespace-nowrap overflow-x-scroll pr-6">
           {images.slice(0, 2).map((image, index) => (
             <button
               key={index}
@@ -91,7 +93,7 @@ export default function Index() {
           setOpen(false);
         }}
       />
-    </>
+    </div>
   );
 }
 
